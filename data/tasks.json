@@ -10,6 +10,10 @@
     {
       "title": "Task 3: welcome to js",
       "files": ["works/task3.html"]
+    },
+     {
+      "title": "Task 3: calculator using js",
+      "files": ["works/task4.html"]
     }
     
   ]
