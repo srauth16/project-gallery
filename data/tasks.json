@@ -1,0 +1,15 @@
+[
+    {
+      "title": "Task 1: Basic HTML Styling",
+      "files": ["works/task1.html", "works/task1.2.html"]
+    },
+    {
+      "title": "Task 2: Responsive Layout",
+      "files": ["works/task2.html", "works/task2.css"]
+    },
+    {
+      "title": "Task 3: Form Validation",
+      "files": ["works/task3.html"]
+    }
+  ]
+  
