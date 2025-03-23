@@ -1,0 +1,30 @@
+/* Centering the text on the page */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    }
+    .google-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    }
+    .google-text div:nth-child(1) { color: #4285F4; }
+    .google-text div:nth-child(2) { color: #EA4335; }
+    .google-text div:nth-child(3) { color: #FBBC05; }
+    .google-text div:nth-child(4) { color: #34A853; }
+    .google-text div:nth-child(5) { color: #4285F4; }
+    .google-text div:hover {
+    cursor: pointer;
+    background-color: rgba(100, 18, 18, 0.5);
+    transform: scale(1.5);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    
