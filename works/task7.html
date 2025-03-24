@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>convert to upper case</title>
+    <script>
+        function f() {
+            var mytext = document.getElementById("in").value ;
+            mytext = mytext.toUpperCase()
+            document.getElementById("out").value = mytext ;
+        }
+    </script>
+   
+</head>
+
+<body>
+    <input id = "in" oninput = f() placeholder="enter the text">
+
+    <input id = "out"   disabled>
+
+</body>
+</html>
