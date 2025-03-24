@@ -14,6 +14,50 @@
      {
       "title": "Task 4: calculator using js",
       "files": ["works/task4.html"]
+    },
+      {
+      "title": "Task 5: Github Integration",
+      "files": ["works/task5.html"]
+    },
+      {
+      "title": "Task 6: console output",
+      "files": ["works/task6.html"]
+    },
+      {
+      "title": "Task 7: string operation",
+      "files": ["works/task7.html"]
+    },
+      {
+      "title": "Task 8: conditions",
+      "files": ["works/task8.html"]
+    },
+      {
+      "title": "Task 9: call stack with array",
+      "files": ["works/task9.html"]
+    },
+      {
+      "title": "Task 10: star with loops",
+      "files": ["works/task10.html"]
+    },
+      {
+      "title": "Task 11: class work",
+      "files": ["works/task11.html"]
+    },
+      {
+      "title": "Task 12: objects",
+      "files": ["works/task12.html"]
+    },
+      {
+      "title": "Task 13: objects 2",
+      "files": ["works/task13.html"]
+    },
+      {
+      "title": "Task 14: Functions",
+      "files": ["works/task14.html"]
+    },
+      {
+      "title": "Task 15: Bootstrap",
+      "files": ["works/task15.html"]
     }
     
   ]
