@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Object with Array Storage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+
+        }
+
+
+
+
+        #studentForm {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+
+        }
+
+        #studentForm input {
+            width: 100%;
+
+            border: 1px solid #ddd;
+
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        #demo_div {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #fff;
+
+            text-align: left;
+        }
+
+        #searchid {
+            width: 70%;
+
+            margin-right: 10px;
+            font-size: 16px;
+
+            border: 1px solid #ddd;
+        }
+
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        let studentsArray = [];
+
+        
+        function Student(name, sno, age, height) {
+            this.name = name;
+            this.sno = sno;
+            this.age = age;
+            this.height = height;
+        }
+
+  
+        Student.prototype.description = function () {
+            return `His name is ${this.name}. His SNO number is ${this.sno}, and he is ${this.age} years old with a height of ${this.height} feet.`;
+        };
+
+        function storeData() {
+            const name = document.getElementById("nameid").value.trim();
+            const sno = document.getElementById("snoid").value.trim();
+            const age = document.getElementById("ageid").value.trim();
+            const height = document.getElementById("heightid").value.trim();
+
+            if (!name || !sno || !age || !height) {
+                alert("Please enter all student data.");
+                return;
+            }
+
+       
+            const student = new Student(name, sno, age, height);
+            studentsArray.push(student);
+
+           
+            document.getElementById("studentForm").reset();
+        }
+
+        function displayData() {
+            if (studentsArray.length === 0) {
+                document.getElementById("demo_div").innerHTML = "No student data available.";
+                return;
+            }
+
+            let allStudentsDescription = studentsArray.map((stu, index) =>
+                `<p>Student ${index + 1}: ${stu.description()}</p>`
+            ).join("");
+
+            document.getElementById("demo_div").innerHTML = allStudentsDescription;
+        }
+
+        function clearData() {
+            studentsArray = []; 
+            document.getElementById("studentForm").reset(); 
+       
+        }
+
+        function clearDisplay() {
+            document.getElementById("demo_div").innerHTML = "";
+        }
+
+        function searchData() {
+            const searchQuery = document.getElementById("searchid").value.trim().toLowerCase();
+
+            if (!searchQuery) {
+                alert("Please enter a search term.");
+                return;
+            }
+
+            const filteredStudents = studentsArray.filter(stu =>
+                stu.name.toLowerCase().includes(searchQuery) ||
+                stu.sno.toLowerCase().includes(searchQuery)
+            );
+
+            if (filteredStudents.length === 0) {
+                document.getElementById("demo_div").innerHTML = "No student found matching your search.";
+            } else {
+                let searchResults = filteredStudents.map((stu, index) =>
+                    `<p>Student ${index + 1}: ${stu.description()}</p>`
+                ).join("");
+                document.getElementById("demo_div").innerHTML = searchResults;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Enter Student Information</h2>
+    <form id="studentForm" onsubmit="return false;">
+        <input id="nameid" placeholder="Enter his name" />
+        <input type="text" id="snoid" placeholder="Enter the ID" />
+        <input placeholder="Enter his age" id="ageid" />
+        <input placeholder="Enter his height (in feet)" id="heightid" />
+    </form>
+
+    <div class="button-container">
+        <button onclick="storeData()">Enter Info</button>
+        <button onclick="displayData()">Show Info</button>
+        <button onclick="clearData()">Clear Data</button>
+        <button onclick="clearDisplay()">Clear Display</button>
+    </div>
+
+    <h3>Search Student Information</h3>
+    <div class="search-container">
+        <input id="searchid" placeholder="Enter name or SNO to search" />
+        <button onclick="searchData()">Search</button>
+    </div>
+
+    <div id="demo_div"></div>
+</body>
+
+</html>

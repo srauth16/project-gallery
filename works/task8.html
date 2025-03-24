@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <script>
+          function calculate_score() {
+               var score = parseInt(document.getElementById("val").value) ;
+          var result = "" ;
+          if (score >= 90) {
+                    result = "A";
+               } else if (score >= 80) {
+                    result = "B";
+               } else if (score >= 70) {
+                    result = "C";
+               } else if (score >= 60) {
+                    result = "D";
+               } else {
+                    result = "F";
+               }
+
+
+               document.getElementById("GRADE").textContent = "Your Grade Is " + result;
+          }
+          
+               </script>
+</head>
+<body>
+
+     <h3>Grade Calculator</h3>
+
+     <input id = "val" placeholder="Enter Your Score"  oninput="calculate_score()"></input>
+     <p id = "GRADE">your grade is : </p>
+     
+</body>
+</html>

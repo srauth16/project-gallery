@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <Script>
+
+                  let totalsum ;
+            function run() {
+
+                
+              let  min = parseInt(document.getElementById("min").value);
+              let  max = parseInt(document.getElementById("max").value);
+
+                       
+               sum = Math.floor(Math.random() * (max - min)) + min;
+                          totalsum = sum ;
+               document.getElementById("displ").innerHTML = "your random number is : "  + sum ;
+
+
+              setTimeout(display, 5000) ;
+
+
+            }
+
+            
+
+            
+
+            function display() {
+                document.getElementById("disp").innerHTML = "Vanished " ; 
+
+                setTimeout(display1, 5000) ;
+            }
+
+            function display1() {
+                document.getElementById("disp").innerHTML = "your random number is : "  + totalsum ;
+            }
+
+
+
+
+
+    </Script>
+</head>
+<body>
+
+    <div id = "disp">
+        <input type="text" id = "min" placeholder="enter the min number">
+        <input type="text" id = "max" placeholder="enter the max number">
+        <button onclick = "run()" >enter</button>
+        <p id = "displ" >your random number is : </p>
+    </div>
+    
+</body>
+</html>

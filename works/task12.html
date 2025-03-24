@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Object with Array Storage</title>
+    <script>
+        
+        let studentsArray = [];
+
+        function storeData() {
+            const name = document.getElementById("nameid").value;
+            const sno = document.getElementById("snoid").value;
+            const age = document.getElementById("ageid").value;
+            const height = document.getElementById("heightid").value;
+
+            if (name === "" || sno === "" || age === "" || height === "") {
+                alert("Please Enter the student Data");
+                return;
+            }
+
+            
+            const student = {
+                name: name,
+                sno: sno,
+                age: age,
+                height: height,
+                description: function() {
+                    return "His name is " + this.name + ". His sno number is " + this.sno + ", and he is " + this.age + " years old with a height of " + this.height + " feet.";
+                }
+            };
+
+            
+            studentsArray.push(student);
+
+            
+            document.getElementById("nameid").value = "";
+            document.getElementById("snoid").value = "";
+            document.getElementById("ageid").value = "";
+            document.getElementById("heightid").value = "";
+        }
+
+        function displayData() {
+            if (studentsArray.length === 0) {
+                document.getElementById("demo_div").innerHTML = "No student data available.";
+                return;
+            }
+
+            
+            let allStudentsDescription = "";
+            studentsArray.forEach(function(stu, index) {
+                allStudentsDescription += `<p>Student ${index + 1}: ${stu.description()}</p>`;
+            });
+
+            
+            document.getElementById("demo_div").innerHTML = allStudentsDescription;
+        }
+    </script>
+</head>
+<body>
+    <h2>Enter Student Information</h2>
+    <div>
+        <input id="nameid" placeholder="Enter his name" />
+        <input type="text" id="snoid" placeholder="Enter the ID" />
+        <input placeholder="Enter his age" id="ageid" />
+        <input placeholder="Enter his height (in feet)" id="heightid" />
+    </div>
+    
+    <div>
+        
+        <button onclick="storeData()">Enter Info</button>
+        
+        
+        <button onclick="displayData()"> Show Info</button>
+    </div>
+
+    <div id="demo_div"></div>
+</body>
+</html>

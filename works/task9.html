@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stack using arrays</title>
+    <script>
+        let taskStack = [];
+
+        function addTask() {
+            let taskInput = document.getElementById("taskInput");
+            let taskName = taskInput.value.trim();
+
+            if (taskName !== "") {
+                taskStack.push(taskName);
+                taskInput.value = "";
+                updateTaskStack();
+            }
+        }
+
+        function undoTask() {
+            if (taskStack.length > 0) {
+                taskStack.pop();
+                updateTaskStack();
+            }
+        }
+
+        function updateTaskStack() {
+            document.getElementById("taskStack").textContent = taskStack.join(" , ");
+        }
+    </script>
+
+</head>
+<body>
+
+    <input type="text" id="taskInput" placeholder="Enter Your Input">
+    <button onclick="addTask()">Add Task</button>
+    <button onclick="undoTask()">Undo Task</button>
+
+    <h2>Process Line</h2>
+    <p id="taskStack"></p>
+
+    
+
+</body>
+</html>
