@@ -10,17 +10,17 @@ document.addEventListener("DOMContentLoaded", () => {
         li.textContent = task.title;
 
         li.addEventListener("click", () => {
-          // Remove "active" class from all sidebar items
+         
           document.querySelectorAll("#task-list li").forEach(el => el.classList.remove("active"));
 
-          // Add "active" class to clicked item
+          
           li.classList.add("active");
 
-          // Load the first file from the list (usually an HTML file) into the iframe
+          
           taskFrame.src = task.files[0];
         });
 
-        // Load the first task by default
+        
         if (index === 0) {
           li.classList.add("active");
           taskFrame.src = task.files[0];
